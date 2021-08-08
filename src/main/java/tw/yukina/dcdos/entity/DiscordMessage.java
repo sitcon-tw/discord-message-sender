@@ -7,4 +7,5 @@ public class DiscordMessage {
     private String username;
     private String avatarUrl;
     private String content;
+    private boolean delay;
 }

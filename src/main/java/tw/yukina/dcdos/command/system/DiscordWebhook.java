@@ -55,8 +55,11 @@ public class DiscordWebhook extends AbstractAssistantCommand implements Runnable
         JSONArray jsonArray = getDiscordMessage();
         for (int i = 0; i < jsonArray.length(); i++) {
             if (i != 0) {
-                int messageDelay = packageDiscordMessage(jsonArray.getJSONObject(i - 1)).getContent().length() * delay;
-                Thread.sleep(messageDelay);
+                System.out.println(packageDiscordMessage(jsonArray.getJSONObject(i - 1)).isDelay());
+                if(packageDiscordMessage(jsonArray.getJSONObject(i - 1)).isDelay()) {
+                    int messageDelay = packageDiscordMessage(jsonArray.getJSONObject(i - 1)).getContent().length() * delay;
+                    Thread.sleep(messageDelay);
+                }
             }
             pushMessage(packageDiscordMessage(jsonArray.getJSONObject(i)));
         }
@@ -67,6 +70,8 @@ public class DiscordWebhook extends AbstractAssistantCommand implements Runnable
         discordMessage.setUsername(jsonObject.getString("username"));
         discordMessage.setAvatarUrl(jsonObject.getString("avatarUrl"));
         discordMessage.setContent(jsonObject.getString("content"));
+
+        if(jsonObject.has("hasDelay")) discordMessage.setDelay(jsonObject.getBoolean("hasDelay"));
         return discordMessage;
     }
 
