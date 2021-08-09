@@ -2,11 +2,11 @@ package tw.yukina.dcdos.command.system.user;
 
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Parameters;
-import tw.yukina.dcdos.command.AbstractSubCommand;
+import tw.yukina.dcdos.command.AbstractUserSubCommand;
 import tw.yukina.dcdos.entity.account.User;
 
 @Command(name = "del", description = "Find users and delete it")
-public class delUser extends AbstractSubCommand implements Runnable {
+public class delUser extends AbstractUserSubCommand implements Runnable {
 
     @Parameters(index = "0", paramLabel = "<name>")
     private String name;

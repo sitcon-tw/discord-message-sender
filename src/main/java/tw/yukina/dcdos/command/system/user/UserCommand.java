@@ -10,10 +10,10 @@ import tw.yukina.dcdos.constants.Role;
 import tw.yukina.dcdos.repository.UserCacheRepository;
 import tw.yukina.dcdos.repository.UserRepository;
 
+@Getter
 @Component
 @Command(name = "/user", subcommands = {CommandLine.HelpCommand.class, addUser.class, findUser.class,
         listUser.class, delUser.class})
-@Getter
 public class UserCommand extends AbstractAssistantCommand {
 
     @Autowired

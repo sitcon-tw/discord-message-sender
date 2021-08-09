@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 public class AbstractEntity {
     @Id
     @Column(unique = true)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @NotNull
     private Long id;
 }

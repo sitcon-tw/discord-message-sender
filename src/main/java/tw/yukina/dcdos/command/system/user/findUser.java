@@ -2,12 +2,12 @@ package tw.yukina.dcdos.command.system.user;
 
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Parameters;
-import tw.yukina.dcdos.command.AbstractSubCommand;
+import tw.yukina.dcdos.command.AbstractUserSubCommand;
 import tw.yukina.dcdos.entity.account.User;
 import tw.yukina.dcdos.entity.account.UserCache;
 
 @Command(name = "find", description = "Find users and display user info")
-public class findUser extends AbstractSubCommand {
+public class findUser extends AbstractUserSubCommand {
 
     @Command(name = "name", description = "Display name")
     private void findByName(@Parameters(index = "0", paramLabel = "<name>") String name) {

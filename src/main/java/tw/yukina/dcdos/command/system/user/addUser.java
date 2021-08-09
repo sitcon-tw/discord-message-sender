@@ -3,12 +3,12 @@ package tw.yukina.dcdos.command.system.user;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
-import tw.yukina.dcdos.command.AbstractSubCommand;
+import tw.yukina.dcdos.command.AbstractUserSubCommand;
 import tw.yukina.dcdos.constants.Role;
 import tw.yukina.dcdos.entity.account.User;
 
 @Command(name = "add", description = "Add a user and give it permissions")
-public class addUser extends AbstractSubCommand implements Runnable{
+public class addUser extends AbstractUserSubCommand implements Runnable{
 
     @Parameters(index = "0", paramLabel = "<name>", description = "Please use a name that everyone knows")
     private String name;
